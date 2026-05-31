@@ -9,12 +9,10 @@ b. Tag p: contiene texto o un tag
 c. Tag img: contiene el nombre de una imagen.
 d. Tag a: contiene un link y un texto o un tag.
 Por ejemplo, una página formada por estos tags pueden ser :
-<body>
-<p> Este es el examen de poo </p>
 <img href=”nombreDeUnaImg.jpg” />
 <p> Espero que hayas estudiado </p>
 <a href=”http://unlink.html”>texto del link </a>
-</body>
+</body>"
 Otro ejemplo:
 Con el siguiente código:
 var body = new Body();
@@ -26,7 +24,5 @@ Debería imprimirse:
 <p> hola </p>
 <p> <p> hola </p> </p>
 </body>
-Santa Clara, California, USA
-P: +1-XXX-XXX-XXXX W: GlobalLogic.com
 Realice el modelado de las clases que permitan resolver el problema. Realice los
 métodos que crea convenientes para imprimir el html por pantalla.
