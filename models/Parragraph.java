@@ -12,6 +12,9 @@ public class Parragraph implements Tag {
         this.text = text;
     }
 
+    public Parragraph() {
+    }
+
     @Override
     public String displayTag() {
         return "<p>" + getValidatedHTML() + "</p>\n";
@@ -33,8 +36,9 @@ public class Parragraph implements Tag {
         }
         if (this.htmlTag != null) {
             return htmlTag.displayTag();
+        } else {
+            return "";
         }
-        throw new IllegalStateException("Not correct value entered");
     }
 
 }

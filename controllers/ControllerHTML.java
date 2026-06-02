@@ -9,7 +9,6 @@ public class ControllerHTML {
     TagFactory tagFactory = new TagFactory();
 
     public void createAnchor(String text, String link, Tag tag) {
-        // TODO estas validaciones deberian estar dentro del tagfactory
         if (link.trim().isEmpty()) {
             link = null;
         }
@@ -24,7 +23,6 @@ public class ControllerHTML {
     }
 
     public void createImage(String url, String alt) {
-        // En el propio objeto tienen valores por defecto
         DOM.addTagToBody(tagFactory.getImage(url, alt));
     }
 
@@ -40,12 +38,22 @@ public class ControllerHTML {
         return DOM.identifyTags();
     }
 
-    public void workWithLastTagBeforeNull() {
-        // Tag tagInFact = DOM.;
-        // //TODO aca obtendriamos la ultima referencia a un Tag
-        // antes de un null. Nos sirve para agregar tags dentro de otros tag sin poder
-        // mantener un contexto de estos por parte de la vista
+    public void insertParragraphInLastTag(String text, Tag tag) {
+        DOM.insertInLastTag(tagFactory.getParragaph(text, tag));
+    }
+
+    public void insertAnchorInLastTag(String text, String link, Tag tag) {
+        if (link.trim().isEmpty()) {
+            link = null;
+        }
+        if (text.trim().isEmpty()) {
+            text = null;
+        }
+        DOM.insertInLastTag(tagFactory.getAnchor(link, tag, text));
 
     }
 
+    public void insertImageInLastTag(String Url, String alt) {
+        DOM.insertInLastTag(tagFactory.getImage(Url, alt));
+    }
 }

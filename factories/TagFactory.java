@@ -37,31 +37,4 @@ public class TagFactory {
         }
     }
 
-    // public Body getBody(List<Tag> listTags) {
-    // if (!isBodySet) {
-    // if (listTags != null) {
-    // turnBody();
-    // return new Body(listTags);
-    // } else {
-    // turnBody();
-    // return new Body();
-    // }
-    // } else {
-    // throw new IllegalArgumentException("There is already a body in here");
-    // }
-
-    // }
-    // public boolean isBodySet() {
-    // return isBodySet;
-    // }
-
-    // public void turnBody() {
-    // this.isBodySet = !this.isBodySet;
-    // }
-
-    // public void validateBodySet() {
-    // if (!isBodySet()) {
-    // throw new IllegalStateException("Body tag is missing");
-    // }
-    // }
 }

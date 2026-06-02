@@ -2,7 +2,7 @@ package models;
 
 import java.util.List;
 
-//?En otra vida podriamos haber usado un singleton... Consulta eso con Gemini
+//todo hacer funcines para manejar el estado del utimo elemento insertado. Dependiendo de si esta sea un Anchor o Parragraph. La idea es que estas funcionalidades permitan jugar con la insercion de tags recursiva
 public class DocumentHTML {
     private Body body;
 
@@ -54,13 +54,14 @@ public class DocumentHTML {
         return stringBuilder.toString();
     }
 
-    public void insertTag(int index, Tag tagInsertion) {
-
+    public void insertInLastTag(Tag tagInsertion) {
+        Tag tagParent = obtainReferenceToLastTag();
+        tagParent.insertSelfTag(tagInsertion);
     }
 
-    public Tag obtainReferenceToLastTag() {
+    private Tag obtainReferenceToLastTag() {
         List<Tag> listBodyTags = this.body.getListTags();
-        if (listBodyTags.size() > 0) {
+        if (!listBodyTags.isEmpty()) {
             Tag auxTag = listBodyTags.get(listBodyTags.size() - 1);
 
             while (auxTag.hasTag() != null) {
